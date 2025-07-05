@@ -2,8 +2,10 @@ services:
   - type: web
     name: telegram-video-bot
     runtime: python
+    env: python
+    region: oregon
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 bot.py"
-    envVars:
-      - key: TOKEN
-        sync: false
+    plan: free
+    branch: main
+    repo: https://github.com/mirzaolim06/telegram-video-bot
