@@ -1,8 +1,9 @@
 services:
   - type: web
     name: telegram-video-bot
-    env: python
+    runtime: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 bot.py"
-    region: oregon
-    plan: free
+    envVars:
+      - key: TOKEN
+        sync: false
